@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<style>li {padding:10px; list-style: none}</style>
+<body>
+<ul>
+    <li>
+        첫번째 인자는 새 창에 로드할 문서의 URL이다. 인자를 생략하면 이름이 붙지 않은 새 창이 만들어진다.<br />
+        <input type="button" onclick="open1()" value="window.open('00_object.html');" />
+    </li>
+    <li>
+        두번째 인자는 새 창의 이름이다. _self는 스크립트가 실행되는 창을 의미한다.<br />
+        <input type="button" onclick="open2()" value="window.open('00_object.html', '_self');" />
+    </li>
+    <li>
+        _blank는 새 창을 의미한다. <br />
+        <input type="button" onclick="open3()" value="window.open('00_object.html', '_blank');" />
+    </li>
+    <li>
+        창에 이름을 붙일 수 있다. open을 재실행 했을 때 동일한 이름의 창이 있다면 그곳으로 문서가 로드된다.<br />
+        <input type="button" onclick="open4()" value="window.open('00_object.html', 'ot');" />
+    </li>
+    <li>
+        세번재 인자는 새 창의 모양과 관련된 속성이 온다.<br />
+        <input type="button" onclick="open5()" value="window.open('00_object.html', '_blank', 'width=200, height=200, resizable=yes');" />
+    </li>
+    <input type="button" value="open, 00_object.html 열기" onclick="winopen();" />
+    <input type="button" value="close, 00_object.html 닫기" onclick="winclose()" />
+</ul>
+ 
+<script>
+function open1(){
+    window.open('00_object.html');
+}
+function open2(){
+    window.open('00_object.html', '_self');
+}
+function open3(){
+    window.open('00_object.html', '_blank');
+}
+function open4(){
+    window.open('00_object.html', 'ot');
+}
+function open5(){
+    window.open('00_object.html', '_blank', 'width=200, height=200, resizable=no');
+}
+function winopen(){
+        win = window.open('00_object.html', 'ot', 'width=300px, height=500px');
+    }
+function winclose(){
+        win.close();
+    }
+</script>
+</body>
+</html>
