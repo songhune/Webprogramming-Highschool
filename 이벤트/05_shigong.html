@@ -1,0 +1,20 @@
+<html>
+ <head>
+  <script type="text/javascript">
+   var request = new XMLHttpRequest(); // XMLHttpRequest 생성
+   request.open("GET", "http://localhost/time.php"); // 데이터를 GET Method로 요청
+   request.onreadystatechange = function() {
+    if ( request.readyState === 4 && request.status === 200 ) { // request가 끝났으며(4), 성공적(200)인 경우.
+     document.getElementById("content").innerHTML = resquest.responseText; // #content 태그 내의 내용을 받아온 텍스트로 교체.
+    }
+    else{
+      alert('hey')
+      print('hello')
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <div id="content"></div>
+ </body>
+</html>

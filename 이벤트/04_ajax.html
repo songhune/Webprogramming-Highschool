@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p>time : <span id="time"></span></p>
+<input type="button" id="execute" value="execute" />
+<script>
+document.querySelector('input').addEventListener('click', function(event){
+	var url = 'http://localhost/time.php'
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4 && xhr.status === 200){
+            document.querySelector('#time').innerHTML = xhr.responseText;
+        }
+    }
+    xhr.send(); 
+}); 
+</script> 
+</body>
+</html>
